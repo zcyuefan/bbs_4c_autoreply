@@ -25,3 +25,13 @@
     your_user.reply_many(your_post, *random.sample(messages, 3))
 
 通过windows任务计划程序或者Linux crontab设置定时任务即可自动水贴
+
+# 命令
+F:\05-python-projects\bbs_4c_autoreply\venv\Scripts\python.exe F:/05-python-projects/bbs_4c_autoreply/run.py -u zcyuefan -p yuefan -c 5
+F:\05-python-projects\bbs_4c_autoreply\venv\Scripts\python.exe F:/05-python-projects/bbs_4c_autoreply/run.py -u yanghao -p yuefan -c 5
+F:\05-python-projects\bbs_4c_autoreply\venv\Scripts\python.exe F:/05-python-projects/bbs_4c_autoreply/run.py -u zcyuefan -p 默默熙 -c 5
+F:\05-python-projects\bbs_4c_autoreply\venv\Scripts\python.exe F:/05-python-projects/bbs_4c_autoreply/run.py -u zcyuefan -p ying姐 -c 5
+F:\05-python-projects\bbs_4c_autoreply\venv\Scripts\python.exe F:/05-python-projects/bbs_4c_autoreply/run.py -u zcyuefan -p Noriyasu -c 5
+F:\05-python-projects\bbs_4c_autoreply\venv\Scripts\python.exe F:/05-python-projects/bbs_4c_autoreply/run.py -u zcyuefan -p 岁岁平安 -c 5
+F:\05-python-projects\bbs_4c_autoreply\venv\Scripts\python.exe F:/05-python-projects/bbs_4c_autoreply/run.py -u zcyuefan -p 惠蕙 -c 5
+F:\05-python-projects\bbs_4c_autoreply\venv\Scripts\python.exe F:/05-python-projects/bbs_4c_autoreply/run.py -u zcyuefan -p 小鱼鱼哟 -c 5

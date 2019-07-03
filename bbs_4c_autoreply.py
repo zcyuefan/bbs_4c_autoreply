@@ -16,7 +16,7 @@ import logging
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                     datefmt='%Y/%m/%d %H:%M:%S',
-                    filename='post.log',
+                    filename=r'F:\05-python-projects\bbs_4c_autoreply\post.log',
                     filemode='a')
 
 
@@ -37,7 +37,24 @@ class User:
         else:
             return raw_cookies
 
+    def view_page(self, post):
+        url = "http://www.4c.cn/thread-%s-1-1.html" % post.tid
+        headers = {
+            "Host": "www.4c.cn",
+            "Connection": "keep-alive",
+            "Cache-Control": "max-age=0",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36",
+            "Upgrade-Insecure-Requests": "1",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+            "DNT": "1",
+            "Referer": "http://www.4c.cn/thread-%s-1-1.html" % post.tid,
+            "Accept-Encoding": "gzip, deflate",
+            "Accept-Language": "zh-CN,zh;q=0.8,en;q=0.6"
+        }
+        requests.get(url=url, headers=headers, cookies=self.cookies)
+
     def reply(self, post, message):
+        self.view_page(post)
         url = "http://www.4c.cn/post.php"
         params = dict(action="reply", fid=3555, tid=post.tid, extra="", replysubmit="yes", infloat="yes",
                       handlekey="fastpost")
@@ -88,9 +105,13 @@ if __name__ == "__main__":
         "顶顶更健康",
         "[img]75[img]",
         "{:16_804:}",
-        "[img]72[img][img]80[img]"
+        "[img]72[img][img]80[img]",
+        "{:16_831:}",
+        "天天踩一踩，天天好心情",
+        "顶帖温暖人心"
+
     ]
-    random_sleep_range = [30, 180]
+    random_sleep_range = [10, 21]
     # 实例化用户
     your_user = User(name='your_user',
                      sleep_seconds_from=random_sleep_range[0],
